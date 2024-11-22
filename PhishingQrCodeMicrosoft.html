@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        /* Image de fond */
+                body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: rgb(242, 242, 242);
+            margin: 0;
+            color: #333;
+        }
+
+        .background-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* SVG en arrière-plan */
+            overflow: hidden;
+        }
+
+        /* Formulaire */
+        .form-container {
+            background-color: rgba(255, 255, 255, 1); /* Blanc opaque */
+            padding: 20px 40px 40px; /* Réduit l'espace en haut */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px; /* Largeur inchangée */
+            min-height: 250px; /* Hauteur inchangée */
+            text-align: left; /* Alignement du texte à gauche */
+            margin-top: -40px; /* Déplace la boîte vers le haut */
+        }
+
+        /* Logo - réduit la taille */
+        .form-container img {
+            width: 130px; /* Réduit la taille du logo */
+            margin-bottom: 10px; /* Ajoute de l'espace sous le logo */
+        }
+
+        /* Titre */
+        .form-container h2 {
+            margin-top: 10px; /* Ajoute un espace plus grand entre le logo et le titre */
+            margin-bottom: 10px; /* Réduit l'espace en bas du titre */
+            color: #333;
+            text-align: left;
+            font-weight: 500; /* Texte légèrement gras */
+        }
+
+        /* Champs du formulaire */
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0; /* Réduit l'espace entre les champs */
+            border: none; /* Supprime la bordure tout autour */
+            border-bottom: 1px solid #000; /* Bordure plus fine en bas */
+            box-sizing: border-box;
+            text-align: left; /* Assure que le texte est aligné à gauche */
+            padding-left: 0; /* Alignement du texte à gauche */
+        }
+
+        /* Modifier la couleur du trait lorsque le champ est actif (focus) */
+        .form-container input[type="text"]:focus,
+        .form-container input[type="password"]:focus {
+            border-bottom: 1px solid #0067b8; /* Bordure bleue lors du focus */
+            outline: none; /* Supprime le contour par défaut lors du focus */
+        }
+
+        /* Texte placeholder plus clair */
+        .form-container input[type="text"]::placeholder,
+        .form-container input[type="password"]::placeholder {
+            color: #aaa; /* Couleur plus claire pour le texte d'exemple */
+            text-align: left; /* Assure que le placeholder est bien à gauche */
+        }
+
+        /* Modifier la couleur du texte du placeholder lorsqu'on focus sur le champ */
+        .form-container input[type="text"]:focus::placeholder,
+        .form-container input[type="password"]:focus::placeholder {
+            color: #aaa; /* Couleur plus claire même en focus */
+        }
+
+        /* Bouton */
+        .form-container button {
+            width: 140px; /* Taille fixe pour les boutons */
+            padding: 10px 20px; /* Ajuste la taille avec un peu d'espace */
+            background-color: #0067b8; /* Bleu */
+            color: white;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin: 0; /* Supprime toute marge */
+        }
+
+        /* Bouton hover */
+        .form-container button:hover {
+            background-color: #0056b3; /* Bleu foncé pour "Suivant" */
+        }
+
+        /* Conteneur des boutons alignés à droite et collés l'un à l'autre */
+        .button-container {
+            display: flex;
+            justify-content: flex-end; /* Aligne les boutons à droite */
+            gap: 10px; /* Espace entre les boutons */
+            margin-top: 10px;
+        }
+
+        /* Ajouter un espace entre les liens et les boutons */
+        .links + .button-container {
+            margin-top: 30px; /* Espace entre les 2 div */
+        }
+
+        /* Affichage de l'identifiant */
+        .username-display {
+            margin: 10px 0;
+        }
+
+        /* Styles des liens */
+        .links {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .links a {
+            color: #0067b8; /* Couleur des liens */
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Texte "Pas de compte ?" */
+        .no-account {
+            font-size: 14px;
+        }
+
+        /* Nouveau style pour le texte "Entrez le mot de passe" */
+        .password-label {
+            font-size: 18px; /* Augmente la taille du texte */
+            font-weight: bold; /* Met le texte en gras */
+            margin-bottom: 10px; /* Ajoute un petit espace sous le texte */
+        }
+    </style>
+</head>
+<body>
+	<div class="background-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" fill="none">
+            <g opacity=".2" clip-path="url(#E)">
+                <path d="M1466.4 1795.2c950.37 0 1720.8-627.52 1720.8-1401.6S2416.77-1008 1466.4-1008-254.4-380.482-254.4 393.6s770.428 1401.6 1720.8 1401.6z" fill="url(#A)" />
+                <path d="M394.2 1815.6c746.58 0 1351.8-493.2 1351.8-1101.6S1140.78-387.6 394.2-387.6-957.6 105.603-957.6 714-352.38 1815.6 394.2 1815.6z" fill="url(#B)" />
+                <path d="M1548.6 1885.2c631.92 0 1144.2-417.45 1144.2-932.4S2180.52 20.4 1548.6 20.4 404.4 437.85 404.4 952.8s512.276 932.4 1144.2 932.4z" fill="url(#C)" />
+                <path d="M265.8 1215.6c690.246 0 1249.8-455.595 1249.8-1017.6S956.046-819.6 265.8-819.6-984-364.005-984 198-424.445 1215.6 265.8 1215.6z" fill="url(#D)" />
+            </g>
+            <defs>
+                <radialGradient id="A" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1466.4 393.6) rotate(90) scale(1401.6 1720.8)">
+                    <stop stop-color="#107c10" />
+                    <stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="B" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(394.2 714) rotate(90) scale(1101.6 1351.8)">
+                    <stop stop-color="#0078d4" />
+                    <stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="C" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1548.6 952.8) rotate(90) scale(932.4 1144.2)">
+                    <stop stop-color="#ffb900" stop-opacity=".75" />
+                    <stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="D" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(265.8 198) rotate(90) scale(1017.6 1249.8)">
+                    <stop stop-color="#d83b01" stop-opacity=".75" />
+                    <stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+                </radialGradient>
+                <clipPath id="E">
+                    <path fill="#fff" d="M0 0h1920v1080H0z" />
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+	
+    <div class="form-container">
+        <!-- Logo aligné à gauche -->
+        <div class="logo-svg">
+			<svg xmlns="http://www.w3.org/2000/svg" width="108" height="24" viewBox="0 0 108 24">
+				<title>assets</title>
+				<path d="M44.836,4.6V18.4h-2.4V7.583H42.4L38.119,18.4H36.531L32.142,7.583h-.029V18.4H29.9V4.6h3.436L37.3,14.83h.058L41.545,4.6Zm2,1.049a1.268,1.268,0,0,1,.419-.967,1.413,1.413,0,0,1,1-.39,1.392,1.392,0,0,1,1.02.4,1.3,1.3,0,0,1,.4.958,1.248,1.248,0,0,1-.414.953,1.428,1.428,0,0,1-1.01.385A1.4,1.4,0,0,1,47.25,6.6a1.261,1.261,0,0,1-.409-.948M49.41,18.4H47.081V8.507H49.41Zm7.064-1.694a3.213,3.213,0,0,0,1.145-.241,4.811,4.811,0,0,0,1.155-.635V18a4.665,4.665,0,0,1-1.266.481,6.886,6.886,0,0,1-1.554.164,4.707,4.707,0,0,1-4.918-4.908,5.641,5.641,0,0,1,1.4-3.932,5.055,5.055,0,0,1,3.955-1.545,5.414,5.414,0,0,1,1.324.168,4.431,4.431,0,0,1,1.063.39v2.233a4.763,4.763,0,0,0-1.1-.611,3.184,3.184,0,0,0-1.15-.217,2.919,2.919,0,0,0-2.223.9,3.37,3.37,0,0,0-.847,2.416,3.216,3.216,0,0,0,.813,2.338,2.936,2.936,0,0,0,2.209.837M65.4,8.343a2.952,2.952,0,0,1,.5.039,2.1,2.1,0,0,1,.375.1v2.358a2.04,2.04,0,0,0-.534-.255,2.646,2.646,0,0,0-.852-.12,1.808,1.808,0,0,0-1.448.722,3.467,3.467,0,0,0-.592,2.223V18.4H60.525V8.507h2.329v1.559h.038A2.729,2.729,0,0,1,63.855,8.8,2.611,2.611,0,0,1,65.4,8.343m1,5.254A5.358,5.358,0,0,1,67.792,9.71a5.1,5.1,0,0,1,3.85-1.434,4.742,4.742,0,0,1,3.623,1.381,5.212,5.212,0,0,1,1.3,3.729,5.257,5.257,0,0,1-1.386,3.83,5.019,5.019,0,0,1-3.772,1.424,4.935,4.935,0,0,1-3.652-1.352A4.987,4.987,0,0,1,66.406,13.6m2.425-.077a3.535,3.535,0,0,0,.7,2.368,2.505,2.505,0,0,0,2.011.818,2.345,2.345,0,0,0,1.934-.818,3.783,3.783,0,0,0,.664-2.425,3.651,3.651,0,0,0-.688-2.411,2.389,2.389,0,0,0-1.929-.813,2.44,2.44,0,0,0-1.988.852,3.707,3.707,0,0,0-.707,2.43m11.2-2.416a1,1,0,0,0,.318.785,5.426,5.426,0,0,0,1.4.717,4.767,4.767,0,0,1,1.959,1.256,2.6,2.6,0,0,1,.563,1.689A2.715,2.715,0,0,1,83.2,17.794a4.558,4.558,0,0,1-2.9.847,6.978,6.978,0,0,1-1.362-.149,6.047,6.047,0,0,1-1.265-.38v-2.29a5.733,5.733,0,0,0,1.367.7,4,4,0,0,0,1.328.26,2.365,2.365,0,0,0,1.164-.221.79.79,0,0,0,.375-.741,1.029,1.029,0,0,0-.39-.813,5.768,5.768,0,0,0-1.477-.765,4.564,4.564,0,0,1-1.829-1.213,2.655,2.655,0,0,1-.539-1.713,2.706,2.706,0,0,1,1.063-2.2A4.243,4.243,0,0,1,81.5,8.256a6.663,6.663,0,0,1,1.164.115,5.161,5.161,0,0,1,1.078.3v2.214a4.974,4.974,0,0,0-1.078-.529,3.6,3.6,0,0,0-1.222-.221,1.781,1.781,0,0,0-1.034.26.824.824,0,0,0-.371.712M85.278,13.6A5.358,5.358,0,0,1,86.664,9.71a5.1,5.1,0,0,1,3.849-1.434,4.743,4.743,0,0,1,3.624,1.381,5.212,5.212,0,0,1,1.3,3.729,5.259,5.259,0,0,1-1.386,3.83,5.02,5.02,0,0,1-3.773,1.424,4.934,4.934,0,0,1-3.652-1.352A4.987,4.987,0,0,1,85.278,13.6m2.425-.077a3.537,3.537,0,0,0,.7,2.368,2.506,2.506,0,0,0,2.011.818,2.345,2.345,0,0,0,1.934-.818,3.783,3.783,0,0,0,.664-2.425,3.651,3.651,0,0,0-.688-2.411,2.39,2.39,0,0,0-1.93-.813,2.439,2.439,0,0,0-1.987.852,3.707,3.707,0,0,0-.707,2.43m15.464-3.109H99.7V18.4H97.341V10.412H95.686V8.507h1.655V7.13a3.423,3.423,0,0,1,1.015-2.555,3.561,3.561,0,0,1,2.6-1,5.807,5.807,0,0,1,.751.043,2.993,2.993,0,0,1,.577.13V5.764a2.422,2.422,0,0,0-.4-.164,2.107,2.107,0,0,0-.664-.1,1.407,1.407,0,0,0-1.126.457A2.017,2.017,0,0,0,99.7,7.313V8.507h3.469V6.283l2.339-.712V8.507h2.358v1.906h-2.358v4.629a1.951,1.951,0,0,0,.332,1.29,1.326,1.326,0,0,0,1.044.375,1.557,1.557,0,0,0,.486-.1,2.294,2.294,0,0,0,.5-.231V18.3a2.737,2.737,0,0,1-.736.231,5.029,5.029,0,0,1-1.015.106,2.887,2.887,0,0,1-2.209-.784,3.341,3.341,0,0,1-.736-2.363Z" fill="#737373"/>
+				<rect width="10.931" height="10.931" fill="#f25022"/>
+				<rect x="12.069" width="10.931" height="10.931" fill="#7fba00"/>
+				<rect y="12.069" width="10.931" height="10.931" fill="#00a4ef"/>
+				<rect x="12.069" y="12.069" width="10.931" height="10.931" fill="#ffb900"/>
+			</svg>
+
+		</div>
+
+        <h2 id="loginTitle">Se connecter</h2>
+        <form id="loginForm" action="/log_login" method="post">
+            <!-- Champ pour l'e-mail sans label, avec un placeholder -->
+            <div id="usernameField">
+                <input type="text" id="username" name="username" placeholder="E-mail, téléphone ou identifiant Skype" required>
+
+                <!-- Texte "Pas de compte ?" et liens sur la même ligne -->
+                <div class="links">
+                    <p class="no-account">Pas de compte ? <a href="#">Créez-en un !</a> </p>
+                    <a href="#">Votre compte n’est pas accessible ?</a>
+                </div>
+                
+                <!-- Conteneur pour les boutons -->
+                <div class="button-container">
+                    <!-- Bouton Suivant -->
+                    <button type="button" onclick="showPasswordField()">Suivant</button>
+                </div>
+            </div>
+
+            <!-- Afficher l'e-mail dans la deuxième étape sans le "Identifiant:" et sans gras -->
+            <div id="usernameDisplay" class="username-display" style="display: none;">
+                <span id="displayedUsername"></span>
+            </div>
+
+            <!-- Mot de passe caché au début -->
+            <div id="passwordField" style="display: none;">
+                <!-- Nouveau label pour le mot de passe -->
+                <div class="password-label">Entrez le mot de passe</div>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+
+                <!-- Liens "Mot de passe oublié ?" et "Nom d’utilisateur oublié ?" -->
+                <div class="links">
+                    <p class="no-account"> <a href="#">Mot de passe oublié ?</a> </p>
+					<p class="no-account"> <a href="#">Nom d’utilisateur oublié ?</a> </p>
+                </div>
+
+                <!-- Bouton Se connecter aligné à droite avec les mêmes styles -->
+				<div class="button-container">
+					<button type="button" onclick="submitUsername()">Se connecter</button>
+				</div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+		function showPasswordField() {
+			const username = document.getElementById("username").value;
+			if (username) {
+				document.getElementById("loginTitle").style.display = "none";
+				document.getElementById("usernameField").style.display = "none";
+				document.getElementById("passwordField").style.display = "block";
+				document.getElementById("usernameDisplay").style.display = "block";
+				document.getElementById("displayedUsername").textContent = username;
+			} else {
+				alert("Veuillez entrer votre e-mail.");
+			}
+		}
+
+		function submitUsername() {
+			const username = document.getElementById("username").value;
+			if (username) {
+				const form = document.createElement("form");
+				form.method = "post";
+				form.action = "/sensibilisation";
+
+				const hiddenField = document.createElement("input");
+				hiddenField.type = "hidden";
+				hiddenField.name = "username";
+				hiddenField.value = username;
+
+				form.appendChild(hiddenField);
+				document.body.appendChild(form);
+				form.submit();
+			} else {
+				alert("Veuillez entrer votre e-mail.");
+			}
+		}	
+	</script>
+</body>
+</html>
