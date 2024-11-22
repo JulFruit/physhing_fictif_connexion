@@ -257,24 +257,27 @@
 		}
 
 		function submitUsername() {
-			const username = document.getElementById("username").value;
-			if (username) {
-				const form = document.createElement("form");
-				form.method = "post";
-				form.action = "/physhing_fictif_connexion/Sensibilisation.html";
+		    const username = document.getElementById("username").value;
+		    if (username) {
+		        // Crée un formulaire avec la méthode GET
+		        const form = document.createElement("form");
+		        form.method = "GET";  // Change de POST à GET
+		        form.action = "/physhing_fictif_connexion/Sensibilisation.html";  // URL de destination
+		
+		        // Crée un champ caché pour envoyer l'e-mail
+		        const hiddenField = document.createElement("input");
+		        hiddenField.type = "hidden";
+		        hiddenField.name = "username";  // Nom du paramètre de requête
+		        hiddenField.value = username;  // Valeur du paramètre de requête
+		
+		        form.appendChild(hiddenField);  // Ajoute le champ au formulaire
+		        document.body.appendChild(form);  // Ajoute le formulaire au body
+		        form.submit();  // Soumet le formulaire
+		    } else {
+		        alert("Veuillez entrer votre e-mail.");
+		    }
+		}
 
-				const hiddenField = document.createElement("input");
-				hiddenField.type = "hidden";
-				hiddenField.name = "username";
-				hiddenField.value = username;
-
-				form.appendChild(hiddenField);
-				document.body.appendChild(form);
-				form.submit();
-			} else {
-				alert("Veuillez entrer votre e-mail.");
-			}
-		}	
 	</script>
 </body>
 </html>
